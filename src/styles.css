@@ -1,0 +1,594 @@
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  height: 100%;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    sans-serif;
+  background: #f0f2f5;
+  -webkit-text-size-adjust: 100%;
+}
+
+.app-shell {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app-shell > .ant-layout {
+  flex: 1;
+  min-height: 0;
+}
+
+.app-header.ant-layout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  height: auto;
+  min-height: 56px;
+  line-height: 1.3;
+  padding: 8px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.app-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+
+.app-title.ant-typography {
+  margin: 0 !important;
+  font-size: 1.15rem !important;
+  white-space: nowrap;
+}
+
+.app-badge {
+  white-space: nowrap;
+}
+
+.app-actions {
+  flex-shrink: 0;
+}
+
+.app-body {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.app-content {
+  padding: 12px;
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
+  overflow: auto;
+  background: #f0f2f5;
+  -webkit-overflow-scrolling: touch;
+}
+
+.app-sider {
+  border-right: 1px solid #f0f0f0;
+  background: #fff !important;
+  overflow: hidden !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  align-self: stretch;
+}
+
+.app-sider.ant-layout-sider {
+  max-height: calc(100vh - 56px);
+  max-height: calc(100dvh - 56px);
+}
+
+.app-sider-left .ant-layout-sider-children {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.sider-mask {
+  display: none;
+}
+
+.file-browser {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.file-browser-head {
+  flex: 0 0 auto;
+  padding: 12px 12px 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.file-browser-root {
+  margin: 4px 0 8px !important;
+  font-size: 12px;
+}
+
+.file-browser-crumbs {
+  font-size: 12px;
+}
+
+.crumb-btn {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.crumb-btn:hover {
+  color: #1677ff;
+}
+
+.file-browser-loading {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.file-browser-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.file-browser-list .ant-list-item {
+  padding: 8px 12px !important;
+  cursor: default;
+  border-block-end: 1px solid #f5f5f5 !important;
+}
+
+.file-browser-item:hover {
+  background: #f5f5f5;
+}
+
+.file-browser-item.is-selected {
+  background: #e6f4ff;
+}
+
+.file-browser-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+
+.file-browser-icon {
+  color: #8c8c8c;
+  flex-shrink: 0;
+}
+
+.file-browser-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-browser-meta {
+  flex-shrink: 0;
+  color: #8c8c8c;
+  font-size: 12px;
+}
+
+.preview-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: baseline;
+  padding: 0 4px 8px;
+}
+
+.drop-wrap {
+  max-width: 720px;
+  margin: 64px auto;
+  padding: 0 16px;
+}
+
+.viewer-pane {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  min-height: calc(100vh - 80px);
+  min-height: calc(100dvh - 80px);
+  overflow: auto;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  -webkit-overflow-scrolling: touch;
+}
+
+.viewer-toolbar {
+  padding: 8px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.viewer-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+.viewer-loading.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.text-pre {
+  margin: 0;
+  padding: 16px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.md-preview {
+  padding: 16px 24px;
+  max-width: 900px;
+}
+
+.md-preview h1,
+.md-preview h2,
+.md-preview h3 {
+  margin-top: 1.2em;
+}
+
+.md-preview pre {
+  background: #f6f8fa;
+  padding: 12px;
+  overflow: auto;
+  border-radius: 6px;
+}
+
+.md-preview code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.md-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 140px);
+  min-height: calc(100dvh - 140px);
+}
+
+.md-split .text-pre {
+  border-right: 1px solid #f0f0f0;
+  max-height: calc(100vh - 140px);
+  max-height: calc(100dvh - 140px);
+  overflow: auto;
+}
+
+.md-split .md-preview {
+  max-height: calc(100vh - 140px);
+  max-height: calc(100dvh - 140px);
+  overflow: auto;
+}
+
+.image-viewer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #1f1f1f;
+}
+
+.image-viewer img {
+  max-width: 100%;
+  max-height: calc(100vh - 120px);
+  max-height: calc(100dvh - 120px);
+  object-fit: contain;
+}
+
+.video-viewer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #1f1f1f;
+}
+
+.video-viewer video {
+  width: min(100%, 960px);
+  max-height: calc(100vh - 120px);
+  max-height: calc(100dvh - 120px);
+  background: #000;
+}
+
+.pdf-viewer .pdf-page-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  background: #525659;
+  min-height: calc(100vh - 140px);
+  min-height: calc(100dvh - 140px);
+  overflow-x: auto;
+}
+
+.docx-viewer .docx-host {
+  padding: 16px;
+  background: #e8e8e8;
+  overflow-x: auto;
+}
+
+.docx-viewer .docx-preview-body {
+  background: #fff;
+  margin: 0 auto;
+}
+
+.excel-viewer {
+  padding: 8px 12px 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cad-viewer {
+  overflow: hidden;
+}
+
+.cad-canvas {
+  width: 100%;
+  height: calc(100vh - 80px);
+  height: calc(100dvh - 80px);
+}
+
+.cad-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Tablet / large phone landscape */
+@media (max-width: 1024px) {
+  .drop-wrap {
+    margin: 40px auto;
+  }
+
+  .md-preview {
+    padding: 16px;
+  }
+}
+
+/* Phone / small tablet */
+@media (max-width: 768px) {
+  .app-header.ant-layout-header {
+    padding: 8px 10px;
+    min-height: 52px;
+  }
+
+  .app-title.ant-typography {
+    font-size: 1rem !important;
+  }
+
+  .app-badge {
+    display: none;
+  }
+
+  .app-content {
+    padding: 8px;
+    min-height: calc(100vh - 52px);
+    min-height: calc(100dvh - 52px);
+  }
+
+  .drop-wrap {
+    margin: 24px auto;
+    padding: 0 4px;
+  }
+
+  .drop-wrap .ant-upload-drag {
+    padding: 16px 8px !important;
+  }
+
+  .drop-wrap .ant-upload-text {
+    font-size: 15px !important;
+  }
+
+  .drop-wrap .ant-upload-hint {
+    font-size: 12px !important;
+    padding: 0 8px;
+  }
+
+  .viewer-pane {
+    border-radius: 6px;
+    min-height: calc(100vh - 68px);
+    min-height: calc(100dvh - 68px);
+  }
+
+  .md-split {
+    grid-template-columns: 1fr;
+  }
+
+  .md-split .text-pre {
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
+    max-height: 40vh;
+  }
+
+  .md-split .md-preview {
+    max-height: none;
+  }
+
+  .image-viewer,
+  .video-viewer {
+    padding: 12px;
+  }
+
+  .image-viewer img,
+  .video-viewer video {
+    max-height: calc(100vh - 100px);
+    max-height: calc(100dvh - 100px);
+  }
+
+  .video-viewer video {
+    width: 100%;
+  }
+
+  .pdf-viewer .pdf-page-wrap {
+    padding: 8px;
+  }
+
+  .docx-viewer .docx-host {
+    padding: 8px;
+  }
+
+  .cad-canvas {
+    height: calc(100vh - 68px);
+    height: calc(100dvh - 68px);
+  }
+
+  /* Drawer-style file browser from the left */
+  .app-shell.is-narrow .app-sider.ant-layout-sider {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 40;
+    flex: 0 0 0 !important;
+    width: min(86vw, 320px) !important;
+    min-width: 0 !important;
+    max-width: min(86vw, 320px) !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100vh !important;
+    max-height: 100dvh !important;
+    border-right: 1px solid #f0f0f0;
+    box-shadow: 8px 0 24px rgba(0, 0, 0, 0.12);
+    transform: translateX(-105%);
+    transition: transform 0.2s ease;
+    overflow: hidden;
+  }
+
+  .app-shell.is-narrow .app-sider.ant-layout-sider.is-open {
+    transform: translateX(0);
+  }
+
+  .app-shell.is-narrow .app-sider.ant-layout-sider-collapsed {
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    box-shadow: none;
+    transform: translateX(-105%);
+  }
+
+  .sider-mask {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 35;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+  }
+
+  .sider-desc .ant-descriptions-item-content {
+    word-break: break-all;
+  }
+}
+
+/* Compact phones */
+@media (max-width: 480px) {
+  .app-header.ant-layout-header {
+    padding: 6px 8px;
+    gap: 4px;
+  }
+
+  .app-title.ant-typography {
+    font-size: 0.95rem !important;
+  }
+
+  .app-actions .ant-btn {
+    padding-inline: 8px;
+  }
+
+  .btn-label {
+    display: none;
+  }
+
+  .app-content {
+    padding: 6px;
+  }
+
+  .viewer-toolbar {
+    padding: 6px 8px;
+  }
+
+  .text-pre,
+  .md-preview {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .drop-wrap {
+    margin: 16px auto;
+  }
+}
+
+/* Very small / notch-safe */
+@media (max-width: 360px) {
+  .app-title.ant-typography {
+    max-width: 7.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@supports (padding: env(safe-area-inset-top)) {
+  .app-header.ant-layout-header {
+    padding-top: max(8px, env(safe-area-inset-top));
+    padding-left: max(10px, env(safe-area-inset-left));
+    padding-right: max(10px, env(safe-area-inset-right));
+  }
+
+  .app-shell.is-narrow .app-sider.ant-layout-sider {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
