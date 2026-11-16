@@ -21,6 +21,7 @@ The **desktop process is the server**: it always starts an HTTP service that ser
 |------|------------|
 | 3D mesh | `.stl` |
 | CAD (OCCT WASM) | `.stp` `.step` |
+| Point cloud | `.npz` `.npy` `.ply` `.pcd` `.xyz` |
 | Markdown | `.md` |
 | Word | `.docx` |
 | PDF | `.pdf` |

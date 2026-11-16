@@ -385,6 +385,33 @@ body,
   height: 100% !important;
 }
 
+.pointcloud-viewer {
+  position: relative;
+}
+
+.pointcloud-toolbar {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  right: 12px;
+  z-index: 2;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(20, 22, 28, 0.72);
+  backdrop-filter: blur(6px);
+  color: #e8eaed;
+  pointer-events: auto;
+}
+
+.pointcloud-toolbar .ant-typography {
+  color: #c5cad3 !important;
+}
+
+.pointcloud-canvas {
+  height: calc(100vh - 80px);
+  height: calc(100dvh - 80px);
+}
+
 /* Tablet / large phone landscape */
 @media (max-width: 1024px) {
   .drop-wrap {

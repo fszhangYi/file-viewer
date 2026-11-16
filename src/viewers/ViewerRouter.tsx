@@ -20,6 +20,9 @@ const ExcelViewer = lazy(() =>
 const CadViewer = lazy(() =>
   import('./CadViewer').then((m) => ({ default: m.CadViewer })),
 );
+const PointCloudViewer = lazy(() =>
+  import('./PointCloudViewer').then((m) => ({ default: m.PointCloudViewer })),
+);
 
 interface Props {
   file: OpenedFile;
@@ -72,6 +75,12 @@ export function ViewerRouter({ file }: Props) {
       return (
         <LazyWrap>
           <CadViewer file={file} />
+        </LazyWrap>
+      );
+    case 'pointcloud':
+      return (
+        <LazyWrap>
+          <PointCloudViewer file={file} />
         </LazyWrap>
       );
     case 'archive':

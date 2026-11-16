@@ -1,6 +1,7 @@
 export type ViewerKind =
   | 'stl'
   | 'step'
+  | 'pointcloud'
   | 'markdown'
   | 'docx'
   | 'pdf'
@@ -102,10 +103,13 @@ export function getExtension(name: string): string {
   return idx >= 0 ? lower.slice(idx + 1) : '';
 }
 
+export const POINTCLOUD_EXTS = new Set(['npz', 'npy', 'ply', 'pcd', 'xyz']);
+
 export function detectKind(name: string): ViewerKind {
   const ext = getExtension(name);
   if (ext === 'stl') return 'stl';
   if (ext === 'stp' || ext === 'step') return 'step';
+  if (POINTCLOUD_EXTS.has(ext)) return 'pointcloud';
   if (ext === 'md' || ext === 'markdown') return 'markdown';
   if (ext === 'docx') return 'docx';
   if (ext === 'pdf') return 'pdf';
